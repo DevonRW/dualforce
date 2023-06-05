@@ -9,7 +9,7 @@
       :data-cost_grade="card.cost_grade"
       :data-cost_value="card.cost_value"
     >
-      <img :src="`${getImage(card.slug)}`" alt="" />
+      <img :src="`${getImage(card.slug)}`" alt="" class="hover:scale-110  transition-transform hover:drop-shadow-[0_10px_10px_rgb(253,213,0)]" />
       <h2 class="font-bold mb-2">{{ card.name }}</h2>
       <div v-if="card.faction" :class="card.faction">{{ card.faction }}</div>
       <div v-if="card.effect" v-html="card.effect" class="text-sm"></div>
