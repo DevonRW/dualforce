@@ -1,7 +1,9 @@
 <template>
   <div>
     <NuxtLayout>
-      components will start in here
+      <Header />
+      <Search />
+      <CardList />
     </NuxtLayout>
   </div>
 </template>
