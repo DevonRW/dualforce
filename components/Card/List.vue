@@ -7,3 +7,15 @@
     </ul>
   </div>
 </template>
+
+<script lang="ts">
+  import cards from '~/src/dualForceCards.json'
+
+  export default {
+    data() {
+      return {
+        cardList: cards
+      }
+    }
+  }
+</script>
