@@ -2,7 +2,7 @@
   <section>
     <ul>
       <li v-for="card in cardList" v-bind:key="card.name">
-        {{ card.name }}
+        <CardDetail :card=card />
       </li>
     </ul>
   </section>
