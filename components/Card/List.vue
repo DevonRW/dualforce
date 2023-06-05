@@ -1,9 +1,21 @@
 <template>
-  <div>
-    It's the Card List
-
+  <section>
     <ul>
-      <li>We'll loop through the loaded Card List and display Card Detail here</li>
+      <li v-for="card in cardList" v-bind:key="card.name">
+        {{ card.name }}
+      </li>
     </ul>
-  </div>
+  </section>
 </template>
+
+<script lang="ts">
+  import cards from '~/src/dualForceCards.json'
+
+  export default {
+    data() {
+      return {
+        cardList: cards
+      }
+    }
+  }
+</script>
