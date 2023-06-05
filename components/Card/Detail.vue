@@ -11,7 +11,7 @@
       <li>Cost Value: {{ card.cost_value }}</li>
       <li>Effect: {{ card.effect }}</li>
       <li>Card Set: {{ card.card_set }}</li>
-      <li><img :src="`${this.getImage(card)}`" loading="lazy" alt="" /></li>
+      <li><img :src="`${getImage(card)}`" loading="lazy" alt="" /></li>
     </ul>
   </article>
 </template>
