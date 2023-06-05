@@ -1,7 +1,7 @@
 <template>
   <section>
-    <ul>
-      <li v-for="card in cardList" v-bind:key="card.name">
+    <ul class="flex flex-wrap justify-around gap-8">
+      <li v-for="card in cardList" v-bind:key="card.name" class="w-48 text-white text-center">
         <CardDetail :card=card />
       </li>
     </ul>
