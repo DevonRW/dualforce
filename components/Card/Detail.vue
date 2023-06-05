@@ -12,7 +12,7 @@
       <img :src="`${getImage(card.slug)}`" alt="" />
       <h2 class="font-bold mb-2">{{ card.name }}</h2>
       <div v-if="card.faction" :class="card.faction">{{ card.faction }}</div>
-      <div v-html="card.effect" class="text-sm"></div>
+      <div v-if="card.effect" v-html="card.effect" class="text-sm"></div>
     </div>
   </article>
 </template>
