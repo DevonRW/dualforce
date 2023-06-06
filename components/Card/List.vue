@@ -32,7 +32,16 @@
       }
     },
     computed: {
-      ...mapState(useMainStore, ['filterName', 'filterCardCost','filterCardType', 'filterCardRarity', 'filterCardSet']),
+      ...mapState(useMainStore, [
+        'filterName',
+        'filterCardCost',
+        'filterCardType',
+        'filterCardRarity',
+        'filterCardSet',
+        'filterFaction',
+        'filterAttack',
+        'filterDefense'
+      ]),
     },
     methods: {
       displayItem(card : Array) {
@@ -57,6 +66,33 @@
         
         if (card.card_set !== this.filterCardSet && this.filterCardSet !== 'All') {
           return classNames + ' hidden'
+        }
+
+        if (card.faction !== this.filterFaction && this.filterFaction !== 'All') {
+          return classNames + ' hidden'
+        }
+        
+        if (this.filterAttack !== 'All') {
+
+          if (card.attack == '0' && this.filterAttack !== '0') {
+            return classNames + ' hidden'
+          }
+          
+          if ((['1', '2'].indexOf(card.attack) > -1) && this.filterAttack !== 'small') {
+            return classNames + ' hidden'
+          }
+          
+          if ((['3', '4', '5'].indexOf(card.attack) > -1) && this.filterAttack !== 'medium') {
+            return classNames + ' hidden'
+          }
+          
+          if ((['6', '7', '8', '9', '10'].indexOf(card.attack) > -1) && this.filterAttack !== 'large') {
+            return classNames + ' hidden'
+          }
+        }
+
+        if (card.defense && this.filterDefense !== 'All') {
+
         }
 
         return classNames + ' block'

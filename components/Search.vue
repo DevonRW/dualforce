@@ -51,7 +51,7 @@
 
     <label>
       Faction:
-      <select name="faction" class="bg-blue-500 p-1">
+      <select name="faction" @change="onFactionChange($event)" class="bg-blue-500 p-1">
         <option value="All">All</option>
         <option value="anarchy">Anarchy</option>
         <option value="energy">Energy</option>
@@ -63,7 +63,7 @@
 
     <label>
       Power:
-      <select name="power" class="bg-blue-500 p-1">
+      <select name="power" @change="onPowerChange($event)" class="bg-blue-500 p-1">
         <option value="All">All</option>
         <option value="0">0</option>
         <option value="small">1-2</option>
@@ -74,7 +74,7 @@
 
     <label>
       Health:
-      <select name="health" class="bg-blue-500 p-1">
+      <select name="health" @change="onHealthChange($event)" class="bg-blue-500 p-1">
         <option value="All">All</option>
         <option value="0">0</option>
         <option value="small">1-2</option>
@@ -102,8 +102,11 @@
         'setFilterCardCost',
         'setFilterCardType',
         'setFilterCardRarity',
-        'setFilterCardSet'
-    ]),
+        'setFilterCardSet',
+        'setFilterFaction',
+        'setFilterAttack',
+        'setFilterDefense'
+      ]),
       filterSearchName() {
         this.setFilterName(this.searchName)
       },
@@ -118,6 +121,15 @@
       },
       onSetChange(event: Array) {
         this.setFilterCardSet(event.target.value)
+      },
+      onFactionChange(event: Array) {
+        this.setFilterFaction(event.target.value)
+      },
+      onPowerChange(event: Array) {
+        this.setFilterAttack(event.target.value)
+      },
+      onHealthChange(event: Array) {
+        this.setFilterDefense(event.target.value)
       }
     }
   }
