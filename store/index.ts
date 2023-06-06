@@ -7,10 +7,9 @@ export const useMainStore = defineStore('main', {
     filterCardSet: 'All',
     filterCardCost: 'All',
     filterCardRarity: 'All',
-    filterAttack: '',
-    filterDefense: '',
-    filterCostValue: '',
-    filterFaction: '',
+    filterAttack: 'All',
+    filterDefense: 'All',
+    filterFaction: 'All',
   }),
   actions: {
     setFilterName(value: string) {
@@ -28,6 +27,15 @@ export const useMainStore = defineStore('main', {
     setFilterCardSet(value: string) {
       this.filterCardSet = value
     },
+    setFilterFaction(value: string) {
+      this.filterFaction = value
+    },
+    setFilterAttack(value: string) {
+      this.filterAttack = value
+    },
+    setFilterDefense(value: string) {
+      this.filterDefense = value
+    }
   },
   getters: {
     getFilterName: state => state.filterName,
