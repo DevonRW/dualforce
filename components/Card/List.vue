@@ -5,14 +5,6 @@
         v-for="card in cardList"
         v-bind:key="card.name"
         :class="displayItem(card)"
-        :data-type="card.card_type"
-        :data-card_set="card.card_set"
-        :data-subname="card.subname"
-        :data-attack="card.attack"
-        :data-defense="card.defense"
-        :data-cost_grade="card.cost_grade"
-        :data-cost_value="card.cost_value"
-        :data-rarity="card.rarity"
       >
         <CardDetail :card=card />
       </li>
