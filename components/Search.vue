@@ -1,44 +1,55 @@
 <template>
-  <div>
+  <form class="py-4 flex flex-wrap justify-around text-white">
     <label>
       Name: 
-      <input v-model="searchName" type="search" @keyup="filterSearchName" />
+      <input v-model="searchName" type="search" @keyup="filterSearchName" class="bg-blue-500" />
     </label>
 
-    <select name="type" @change="onTypeChange($event)">
-      <option value="All">Type: All</option>
-      <option value="action">Type: Action</option>
-      <option value="created">Type: Created</option>
-      <option value="recruit">Type: Recruit</option>
-      <option value="leader">Type: Leader</option>
-    </select>
+    <label>Type: 
+      <select name="type" @change="onTypeChange($event)" class="bg-blue-500">
+        <option value="All">All</option>
+        <option value="action">Action</option>
+        <option value="created">Created</option>
+        <option value="recruit">Recruit</option>
+        <option value="leader">Leader</option>
+      </select>
+    </label>
 
-    <select name="cost" @change="onCostChange($event)">
-      <option value="All">Cost: All</option>
-      <option value="free">Cost: Free</option>
-      <option value="bronze">Cost: Bronze</option>
-      <option value="silver">Cost: Silver</option>
-      <option value="gold">Cost: Gold</option>
-    </select>
+    <label>
+      Cost: 
+      <select name="cost" @change="onCostChange($event)" class="bg-blue-500">
+        <option value="All">Cost: All</option>
+        <option value="free">Cost: Free</option>
+        <option value="bronze">Cost: Bronze</option>
+        <option value="silver">Cost: Silver</option>
+        <option value="gold">Cost: Gold</option>
+      </select>
+    </label>
 
-    <select name="rarity" @change="onRarityChange($event)">
-      <option value="All">Rarity: All</option>
-      <option value="common">Rarity: Common</option>
-      <option value="rare">Rarity: Rare</option>
-      <option value="super-rare">Rarity: Super-Rare</option>
-      <option value="ultimate">Rarity: Ultimate</option>
-      <option value="legendary">Rarity: Legendary</option>
-    </select>
+    <label>
+      Rarity:
+      <select name="rarity" @change="onRarityChange($event)" class="bg-blue-500">
+        <option value="All">All</option>
+        <option value="common">Common</option>
+        <option value="rare">Rare</option>
+        <option value="super-rare">Super-Rare</option>
+        <option value="ultimate">Ultimate</option>
+        <option value="legendary">Legendary</option>
+      </select>
+    </label>
 
-    <select name="set" @change="onSetChange($event)">
-      <option value="All">Sets: All</option>
-      <option value="81ba7782-b497-48ea-b7e2-0e5ffa6a693f">Set: Origins</option>
-      <option value="933b9932-0ac5-4f0e-ba1d-4c91736c14a9">Set: Promo</option>
-      <option value="72091027-a763-41b7-a02e-4275505372ff">Set: Green Arrow</option>
-      <option value="f5851957-bd04-4577-9ca1-b8c8cd8abf18">Set: Shazam</option>
-    </select>
+    <label>
+      Set:
+      <select name="set" @change="onSetChange($event)" class="bg-blue-500">
+        <option value="All">All</option>
+        <option value="81ba7782-b497-48ea-b7e2-0e5ffa6a693f">Origins</option>
+        <option value="933b9932-0ac5-4f0e-ba1d-4c91736c14a9">Promo</option>
+        <option value="72091027-a763-41b7-a02e-4275505372ff">Green Arrow</option>
+        <option value="f5851957-bd04-4577-9ca1-b8c8cd8abf18">Shazam</option>
+      </select>
+    </label>
 
-  </div>
+  </form>
 </template>
 
 <script lang="ts">
