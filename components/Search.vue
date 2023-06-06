@@ -1,6 +1,9 @@
 <template>
   <div>
-    <input type="search" />
+    <label>
+      Name: 
+      <input v-model="searchName" type="search" @keyup="filterSearchName" />
+    </label>
 
     <select name="type" @change="onTypeChange($event)">
       <option value="All">Type: All</option>
@@ -27,12 +30,12 @@
       <option value="legendary">Rarity: Legendary</option>
     </select>
 
-    <select name="set">
+    <select name="set" @change="onSetChange($event)">
       <option value="All">Sets: All</option>
       <option value="81ba7782-b497-48ea-b7e2-0e5ffa6a693f">Set: Origins</option>
-      <option value="29db653a-6c7c-4f80-901b-9ad71e95b42a">Promo</option>
+      <option value="933b9932-0ac5-4f0e-ba1d-4c91736c14a9">Set: Promo</option>
       <option value="72091027-a763-41b7-a02e-4275505372ff">Set: Green Arrow</option>
-      <option value="f5851957-bd04-4577-9ca1-b8c8cd8abf18">Shazam</option>
+      <option value="f5851957-bd04-4577-9ca1-b8c8cd8abf18">Set: Shazam</option>
     </select>
 
   </div>
@@ -43,8 +46,22 @@
   import { useMainStore } from '@/store/index'
 
   export default {
+    data() {
+      return {
+        searchName: ''
+      }
+    },
     methods: {
-      ...mapActions(useMainStore, ['setFilterCardCost', 'setFilterCardType', 'setFilterCardRarity']),
+      ...mapActions(useMainStore, [
+        'setFilterName',
+        'setFilterCardCost',
+        'setFilterCardType',
+        'setFilterCardRarity',
+        'setFilterCardSet'
+    ]),
+      filterSearchName() {
+        this.setFilterName(this.searchName)
+      },
       onCostChange(event: Array) {
         this.setFilterCardCost(event.target.value)
       },

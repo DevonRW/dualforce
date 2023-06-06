@@ -32,11 +32,17 @@
       }
     },
     computed: {
-      ...mapState(useMainStore, ['filterCardCost','filterCardType', 'filterCardRarity']),
+      ...mapState(useMainStore, ['filterName', 'filterCardCost','filterCardType', 'filterCardRarity', 'filterCardSet']),
     },
     methods: {
       displayItem(card : Array) {
         let classNames = "w-48 text-white text-center"
+
+        // This is starting to get out of hand, 
+        if(!card.name.toLowerCase().includes(this.filterName.toLowerCase()) && this.filterName !== '') {
+          return classNames + ' hidden'
+        }
+
         if (card.cost_grade !== this.filterCardCost && this.filterCardCost !== 'All') {
           return classNames + ' hidden'
         }
@@ -46,6 +52,10 @@
         }
         
         if (card.rarity !== this.filterCardRarity && this.filterCardRarity !== 'All') {
+          return classNames + ' hidden'
+        }
+        
+        if (card.card_set !== this.filterCardSet && this.filterCardSet !== 'All') {
           return classNames + ' hidden'
         }
 
