@@ -12,5 +12,14 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-lazy-load',
     '@pinia/nuxt',
-  ]
+    '@vite-pwa/nuxt'
+  ],
+  pwa: {
+    /* PWA options */
+    registerType: 'autoUpdate',
+    workbox: {
+      navigateFallback: '/',
+      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
+    },
+  }
 })
