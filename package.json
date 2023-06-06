@@ -10,10 +10,12 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.7.0",
+    "@pinia/nuxt": "^0.4.11",
     "@types/node": "^18",
     "nuxt": "^3.5.2"
   },
   "dependencies": {
-    "nuxt-lazy-load": "^3.0.4"
+    "nuxt-lazy-load": "^3.0.4",
+    "pinia": "^2.1.3"
   }
 }
