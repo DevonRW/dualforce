@@ -18,11 +18,11 @@
     <label>
       Cost: 
       <select name="cost" @change="onCostChange($event)" class="bg-blue-500">
-        <option value="All">Cost: All</option>
-        <option value="free">Cost: Free</option>
-        <option value="bronze">Cost: Bronze</option>
-        <option value="silver">Cost: Silver</option>
-        <option value="gold">Cost: Gold</option>
+        <option value="All">All</option>
+        <option value="free">Free</option>  
+        <option value="bronze">Bronze</option>
+        <option value="silver">Silver</option>
+        <option value="gold">Gold</option>
       </select>
     </label>
 
@@ -46,6 +46,41 @@
         <option value="933b9932-0ac5-4f0e-ba1d-4c91736c14a9">Promo</option>
         <option value="72091027-a763-41b7-a02e-4275505372ff">Green Arrow</option>
         <option value="f5851957-bd04-4577-9ca1-b8c8cd8abf18">Shazam</option>
+      </select>
+    </label>
+
+    <label>
+      Faction
+      <select name="faction" class="bg-blue-500">
+        <option value="All">All</option>
+        <option value="anarchy">Anarchy</option>
+        <option value="energy">Energy</option>
+        <option value="might">Might</option>
+        <option value="tactics">Tactics</option>
+        <option value="tyranny">Tyranny</option>
+        </select>
+    </label>
+
+    <label>
+      Power
+      <select name="power" class="bg-blue-500">
+        <option value="All">All</option>
+        <option value="0">0</option>
+        <option value="small">1-2</option>
+        <option value="medium">3-5</option>
+        <option value="large">6+</option>
+      </select>
+
+    </label>
+
+    <label>
+      Health
+      <select name="health" class="bg-blue-500">
+        <option value="All">All</option>
+        <option value="0">0</option>
+        <option value="small">1-2</option>
+        <option value="medium">3-5</option>
+        <option value="large">6+</option>
       </select>
     </label>
 
