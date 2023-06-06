@@ -16,21 +16,6 @@
         required: true
       }
     },
-    // computed: {
-    //   ...mapState(useMainStore, ['filterCostGrade','filterCardType']),
-    //   displayItem() {
-
-    //     if (this.card.cost_grade !== this.filterCostGrade && this.filterCostGrade !== 'All') {
-    //       return 'hidden'
-    //     }
-        
-    //     if (this.card.card_type !== this.filterCardType && this.filterCardType !== 'All') {
-    //       return 'hidden'
-    //     }
-
-    //     return 'block'
-    //   }
-    // },
     methods: {
       getImage(slug : string) : string {
         return `https://static.dcdualforce.gg/cards/${slug}.png`
