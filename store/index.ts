@@ -4,24 +4,32 @@ export const useMainStore = defineStore('main', {
   state: () => ({
     filterName: '',
     filterCardType: 'All',
-    filterCardSet: '',
+    filterCardSet: 'All',
+    filterCardCost: 'All',
+    filterCardRarity: 'All',
     filterAttack: '',
     filterDefense: '',
     filterCostValue: '',
-    filterCostGrade: 'All',
     filterFaction: '',
   }),
   actions: {
-    setFilterCostGrade(value: string) {
-      this.filterCostGrade = value
+    setFilterCardCost(value: string) {
+      this.filterCardCost = value
     },
     setFilterCardType(value: string) {
       this.filterCardType = value
     },
+    setFilterCardRarity(value: string) {
+      this.filterCardRarity = value
+    },
+    setFilterCardSet(value: string) {
+      this.filterCardSet = value
+    },
   },
   getters: {
-    getFilterCostGrade: state => state.filterCostGrade,
+    getFilterCardCost: state => state.filterCardCost,
     getFilterCardType: state => state.filterCardType,
-    
+    getFilterCardSet: state => state.filterCardSet,
+    getFilterCardRarity: state => state.filterCardRarity,
   }
 })

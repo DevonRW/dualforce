@@ -31,12 +31,12 @@
       }
     },
     computed: {
-      ...mapState(useMainStore, ['filterCostGrade','filterCardType']),
+      ...mapState(useMainStore, ['filterCardCost','filterCardType']),
     },
     methods: {
       displayItem(card : Array) {
         let classNames = "w-48 text-white text-center"
-        if (card.cost_grade !== this.filterCostGrade && this.filterCostGrade !== 'All') {
+        if (card.cost_grade !== this.filterCardCost && this.filterCardCost !== 'All') {
           return classNames + ' hidden'
         }
         
