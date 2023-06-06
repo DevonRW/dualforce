@@ -18,7 +18,7 @@
       <option value="gold">Cost: Gold</option>
     </select>
 
-    <select name="rarity">
+    <select name="rarity" @change="onRarityChange($event)">
       <option value="All">Rarity: All</option>
       <option value="common">Rarity: Common</option>
       <option value="rare">Rarity: Rare</option>
@@ -44,7 +44,7 @@
 
   export default {
     methods: {
-      ...mapActions(useMainStore, ['setFilterCardCost', 'setFilterCardType']),
+      ...mapActions(useMainStore, ['setFilterCardCost', 'setFilterCardType', 'setFilterCardRarity']),
       onCostChange(event: Array) {
         this.setFilterCardCost(event.target.value)
       },
@@ -57,7 +57,6 @@
       onSetChange(event: Array) {
         this.setFilterCardSet(event.target.value)
       }
-
     }
   }
 </script>

@@ -12,6 +12,7 @@
         :data-defense="card.defense"
         :data-cost_grade="card.cost_grade"
         :data-cost_value="card.cost_value"
+        :data-rarity="card.rarity"
       >
         <CardDetail :card=card />
       </li>
@@ -31,7 +32,7 @@
       }
     },
     computed: {
-      ...mapState(useMainStore, ['filterCardCost','filterCardType']),
+      ...mapState(useMainStore, ['filterCardCost','filterCardType', 'filterCardRarity']),
     },
     methods: {
       displayItem(card : Array) {
@@ -41,6 +42,10 @@
         }
         
         if (card.card_type !== this.filterCardType && this.filterCardType !== 'All') {
+          return classNames + ' hidden'
+        }
+        
+        if (card.rarity !== this.filterCardRarity && this.filterCardRarity !== 'All') {
           return classNames + ' hidden'
         }
 
