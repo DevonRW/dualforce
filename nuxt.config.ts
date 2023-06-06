@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/tailwindcss',
-    'nuxt-lazy-load'
+    'nuxt-lazy-load',
+    '@pinia/nuxt',
   ]
 })
