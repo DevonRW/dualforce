@@ -1,12 +1,12 @@
 <template>
-  <form class="py-4 flex flex-wrap justify-around text-white">
+  <form class="mt-4 p-4 flex flex-wrap text-white max-w-[90%] mx-auto bg-black bg-blue-900 rounded-lg gap-2">
     <label>
       Name: 
-      <input v-model="searchName" type="search" @keyup="filterSearchName" class="bg-blue-500" />
+      <input v-model="searchName" type="search" @keyup="filterSearchName" class="bg-blue-500 px-1 py-0.5" />
     </label>
 
     <label>Type: 
-      <select name="type" @change="onTypeChange($event)" class="bg-blue-500">
+      <select name="type" @change="onTypeChange($event)" class="bg-blue-500 p-1">
         <option value="All">All</option>
         <option value="action">Action</option>
         <option value="created">Created</option>
@@ -17,7 +17,7 @@
 
     <label>
       Cost: 
-      <select name="cost" @change="onCostChange($event)" class="bg-blue-500">
+      <select name="cost" @change="onCostChange($event)" class="bg-blue-500 p-1">
         <option value="All">All</option>
         <option value="free">Free</option>  
         <option value="bronze">Bronze</option>
@@ -28,7 +28,7 @@
 
     <label>
       Rarity:
-      <select name="rarity" @change="onRarityChange($event)" class="bg-blue-500">
+      <select name="rarity" @change="onRarityChange($event)" class="bg-blue-500 p-1">
         <option value="All">All</option>
         <option value="common">Common</option>
         <option value="rare">Rare</option>
@@ -40,7 +40,7 @@
 
     <label>
       Set:
-      <select name="set" @change="onSetChange($event)" class="bg-blue-500">
+      <select name="set" @change="onSetChange($event)" class="bg-blue-500 p-1">
         <option value="All">All</option>
         <option value="81ba7782-b497-48ea-b7e2-0e5ffa6a693f">Origins</option>
         <option value="933b9932-0ac5-4f0e-ba1d-4c91736c14a9">Promo</option>
@@ -50,8 +50,8 @@
     </label>
 
     <label>
-      Faction
-      <select name="faction" class="bg-blue-500">
+      Faction:
+      <select name="faction" class="bg-blue-500 p-1">
         <option value="All">All</option>
         <option value="anarchy">Anarchy</option>
         <option value="energy">Energy</option>
@@ -62,20 +62,19 @@
     </label>
 
     <label>
-      Power
-      <select name="power" class="bg-blue-500">
+      Power:
+      <select name="power" class="bg-blue-500 p-1">
         <option value="All">All</option>
         <option value="0">0</option>
         <option value="small">1-2</option>
         <option value="medium">3-5</option>
         <option value="large">6+</option>
       </select>
-
     </label>
 
     <label>
-      Health
-      <select name="health" class="bg-blue-500">
+      Health:
+      <select name="health" class="bg-blue-500 p-1">
         <option value="All">All</option>
         <option value="0">0</option>
         <option value="small">1-2</option>
