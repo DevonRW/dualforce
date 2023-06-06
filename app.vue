@@ -3,6 +3,7 @@
     <NuxtLayout>
       <Header />
       <main class="bg-gray-900">
+        <Banner />
         <Search />
         <CardList />
       </main>
